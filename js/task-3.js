@@ -1,15 +1,6 @@
 function checkForSpam(message) {
-    const blackWordList1 = 'spam';
-    const blackWordList2 = 'sale';
-    const lowercaseMessage = message.toLowerCase();
-    const includesBanWord1 = lowercaseMessage.includes(blackWordList1);
-    const includesBanWord2 = lowercaseMessage.includes(blackWordList2); 
-    const includesBanWord = includesBanWord1 || includesBanWord2;
-    if (includesBanWord) {
-        return true;
-    } else {
-        return false;
-    }
+  const lowercaseMessage = message.toLowerCase();
+  return lowercaseMessage.includes('spam') || lowercaseMessage.includes('sale');
 }
 
 console.log(checkForSpam("Latest technology news")); // false
